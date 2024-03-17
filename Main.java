@@ -1,10 +1,13 @@
 public class Main {
     public static void main ( String[] args ) {
-        checkLoginAndPassword ( 90, 666, 666 );
+        try {
+            checkLoginAndPassword ( "9kjm6775446366322535434630", "6k66", "66i6" );
+        } catch (WrongLoginException | WrongPasswordException e) {
+            e.printStackTrace ( );
+        }
     }
 
-    public static void checkLoginAndPassword ( String login,
-                                               String password, String confirmPassword ) {
+    public static void checkLoginAndPassword ( String login, String password, String confirmPassword ) {
         if ( login.length ( ) > 20 ) {
             throw new WrongLoginException ( "слишком длинный логин" );
         }
